@@ -1,38 +1,19 @@
-name: Deploy Astro to GitHub Pages
+{
 
-on: [push, workflow_dispatch]
+  "name": "yoohoo",
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+  "type": "module",
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
+  "scripts": {
 
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+    "build": "astro build"
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
+  },
 
-      - name: Install
-        run: npm install
+  "dependencies": {
 
-      - name: Build
-        run: npm run build
+    "astro": "^5.0.0"
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
+  }
 
-      - name: Upload
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./dist
-
-      - name: Deploy
-        uses: actions/deploy-pages@v4
+}
